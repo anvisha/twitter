@@ -48,13 +48,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             TwitterClient.sharedInstance.requestSerializer.saveAccessToken(accessToken)
             
             TwitterClient.sharedInstance.GET("1.1/account/verify_credentials.json", parameters: nil, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
-                print("user: \(response)")
+//                print("user: \(response)")
+                let user = User(dictionary: response as! NSDictionary)
+                print("user: \(user.name)")
                 }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
                     print("error in fetching user")
             })
             
             TwitterClient.sharedInstance.GET("1.1/statuses/home_timeline.json", parameters: nil, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
-                print("got home timeline \(response)")
+//                print("got home timeline \(response)")
+                let tweets = Tweet.tweetsWithArray(response as! [NSDictionary])
+                for tweet in tweets {
+                    print("text: \(tweet.text), created: \(tweet.createdAt)")
+                }
                 }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
                     print("error getting home timeline")
             })
