@@ -20,6 +20,11 @@
 		DE9D63261BC21214002906DE /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9D63251BC21214002906DE /* TweetCell.swift */; settings = {ASSET_TAGS = (); }; };
 		DE9D632B1BC24455002906DE /* ComposeTweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9D632A1BC24455002906DE /* ComposeTweetViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		DE9D632D1BC24E81002906DE /* TweetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9D632C1BC24E81002906DE /* TweetDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		DE9D63521BC256AD002906DE /* favorite_on.png in Resources */ = {isa = PBXBuildFile; fileRef = DE9D634D1BC256AD002906DE /* favorite_on.png */; settings = {ASSET_TAGS = (); }; };
+		DE9D63531BC256AD002906DE /* favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = DE9D634E1BC256AD002906DE /* favorite.png */; settings = {ASSET_TAGS = (); }; };
+		DE9D63541BC256AD002906DE /* reply.png in Resources */ = {isa = PBXBuildFile; fileRef = DE9D634F1BC256AD002906DE /* reply.png */; settings = {ASSET_TAGS = (); }; };
+		DE9D63551BC256AD002906DE /* retweet_on.png in Resources */ = {isa = PBXBuildFile; fileRef = DE9D63501BC256AD002906DE /* retweet_on.png */; settings = {ASSET_TAGS = (); }; };
+		DE9D63561BC256AD002906DE /* retweet.png in Resources */ = {isa = PBXBuildFile; fileRef = DE9D63511BC256AD002906DE /* retweet.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +46,11 @@
 		DE9D63251BC21214002906DE /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
 		DE9D632A1BC24455002906DE /* ComposeTweetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTweetViewController.swift; sourceTree = "<group>"; };
 		DE9D632C1BC24E81002906DE /* TweetDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailViewController.swift; sourceTree = "<group>"; };
+		DE9D634D1BC256AD002906DE /* favorite_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favorite_on.png; sourceTree = "<group>"; };
+		DE9D634E1BC256AD002906DE /* favorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favorite.png; sourceTree = "<group>"; };
+		DE9D634F1BC256AD002906DE /* reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reply.png; sourceTree = "<group>"; };
+		DE9D63501BC256AD002906DE /* retweet_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retweet_on.png; sourceTree = "<group>"; };
+		DE9D63511BC256AD002906DE /* retweet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retweet.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +103,7 @@
 		DE9D63041BBD5F8C002906DE /* Twitter */ = {
 			isa = PBXGroup;
 			children = (
+				DE9D634C1BC25695002906DE /* Assets */,
 				DE9D63271BC21242002906DE /* View Controllers */,
 				DE9D63241BC211F1002906DE /* Views */,
 				DE9D631D1BBE880A002906DE /* Models */,
@@ -141,6 +152,18 @@
 				DE9D632C1BC24E81002906DE /* TweetDetailViewController.swift */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		DE9D634C1BC25695002906DE /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				DE9D634D1BC256AD002906DE /* favorite_on.png */,
+				DE9D634E1BC256AD002906DE /* favorite.png */,
+				DE9D634F1BC256AD002906DE /* reply.png */,
+				DE9D63501BC256AD002906DE /* retweet_on.png */,
+				DE9D63511BC256AD002906DE /* retweet.png */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,8 +227,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE9D63101BBD5F8C002906DE /* LaunchScreen.storyboard in Resources */,
+				DE9D63531BC256AD002906DE /* favorite.png in Resources */,
 				DE9D630D1BBD5F8C002906DE /* Assets.xcassets in Resources */,
+				DE9D63521BC256AD002906DE /* favorite_on.png in Resources */,
+				DE9D63541BC256AD002906DE /* reply.png in Resources */,
 				DE9D630B1BBD5F8C002906DE /* Main.storyboard in Resources */,
+				DE9D63561BC256AD002906DE /* retweet.png in Resources */,
+				DE9D63551BC256AD002906DE /* retweet_on.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

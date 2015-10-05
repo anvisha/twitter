@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if User.currentUser != nil {
             // Go to logged in screen
             print("user logged in: \(User.currentUser?.name)")
-            let vc = storyboard.instantiateViewControllerWithIdentifier("TweetsNavigationViewController") as UIViewController
+            let vc = storyboard.instantiateViewControllerWithIdentifier("TweetsNavViewController") as UIViewController
             window?.rootViewController = vc
         }
         return true
@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func tweetPosted() {
-        let vc = storyboard.instantiateViewControllerWithIdentifier("TweetsNavigationViewController") as UIViewController
+        let vc = storyboard.instantiateViewControllerWithIdentifier("TweetsNavViewController") as UIViewController
         window?.rootViewController = vc
         
     }

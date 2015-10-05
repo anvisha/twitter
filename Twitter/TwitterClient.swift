@@ -49,16 +49,39 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
         })
     }
     
-    func postTweet(statusText: String?, completion: () -> ()) {
-        let params: [String: String] = ["status": statusText!]
+    func postTweet(statusText: String?, replyTweetId: String?, completion: () -> ()) {
+        var params: [String: String] = ["status": statusText!]
+        if replyTweetId != nil {
+            params["in_reply_to_status_id"] = replyTweetId
+        }
         POST("1.1/statuses/update.json", parameters: params, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
             print("tweet successfully posted!")
             completion()
             }) { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
                 print("tweet failed to post")
-                print(error)
         }
     
+    }
+    
+    func starTweet(tweetId: String, completion: () -> ()) {
+        let params: [String: String] = ["id": tweetId]
+        POST("1.1/favorites/create.json", parameters: params, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+            print("successfully favorited")
+            completion()
+            }) { (operation: AFHTTPRequestOperation!, response: NSError!) -> Void in
+                print("failed to favorite tweet")
+                print(response)
+        }
+    }
+    
+    func retweetTweet(tweetId: String, completion: () -> ()){
+        let params: [String: String] = ["id": tweetId]
+        POST("1.1/statuses/retweet/\(tweetId).json", parameters: params, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+            print("successfully retweeted")
+            completion()
+            }) { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                print("failed to retweet")
+        }
     }
     
     func openURL(url: NSURL) {

@@ -8,12 +8,14 @@
 
 import UIKit
 
-class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, TweetCellDelegate {
     
     @IBOutlet weak var tweetsView: UITableView!
     var tweets: [Tweet]?
     var refreshControl: UIRefreshControl!
     @IBOutlet weak var labelTweetPosted: UILabel!
+    var replyTweetId: String?
+    var replyScreenName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +60,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tweetsView.dequeueReusableCellWithIdentifier("TweetCell", forIndexPath: indexPath) as! TweetCell
         cell.tweet = tweets![indexPath.row]
+        cell.delegate = self
         return cell
     }
     
@@ -69,6 +72,17 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    func replyClicked(tweet: Tweet) {
+        print("so this happened")
+        replyTweetId = tweet.id
+        replyScreenName = tweet.user?.screenname
+        
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -77,10 +91,16 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let vc = segue.destinationViewController as! TweetDetailViewController
-        let indexPath = tweetsView.indexPathForCell(sender as! UITableViewCell)
-        let selectedTweet = tweets![indexPath!.row]
-        vc.selectedTweet = selectedTweet
+        if segue.identifier == "detailsSegue" {
+            let vc = segue.destinationViewController as! TweetDetailViewController
+            let indexPath = tweetsView.indexPathForCell(sender as! UITableViewCell)
+            let selectedTweet = tweets![indexPath!.row]
+            vc.selectedTweet = selectedTweet
+        }
+        else if segue.identifier == "replySegue" {
+            let vc = segue.destinationViewController as! ComposeTweetViewController
+            vc.replyTweet = replyTweetId
+            vc.replyScreenName = replyScreenName
+        }
     }
-
 }
