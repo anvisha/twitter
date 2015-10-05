@@ -13,9 +13,11 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var tweetsView: UITableView!
     var tweets: [Tweet]?
     var refreshControl: UIRefreshControl!
-
+    @IBOutlet weak var labelTweetPosted: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        labelTweetPosted.hidden = true
         
         tweetsView.delegate = self
         tweetsView.dataSource = self
@@ -29,6 +31,8 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         let dummyTableVC = UITableViewController()
         dummyTableVC.tableView = tweetsView
         dummyTableVC.refreshControl = refreshControl
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "tweetPosted", name: tweetPostedNotification, object: nil)
         
         fetchHomeTimeline()
 
@@ -44,6 +48,10 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
 
     @IBAction func onLogout(sender: AnyObject) {
         User.currentUser?.logout()
+    }
+    
+    func tweetPosted() {
+        labelTweetPosted.hidden = false
     }
 
     
@@ -68,14 +76,11 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let vc = segue.destinationViewController as! TweetDetailViewController
+        let indexPath = tweetsView.indexPathForCell(sender as! UITableViewCell)
+        let selectedTweet = tweets![indexPath!.row]
+        vc.selectedTweet = selectedTweet
     }
-    */
 
 }
