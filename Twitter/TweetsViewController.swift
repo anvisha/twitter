@@ -12,17 +12,34 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBOutlet weak var tweetsView: UITableView!
     var tweets: [Tweet]?
+    var refreshControl: UIRefreshControl!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tweetsView.delegate = self
+        tweetsView.dataSource = self
+        
+        tweetsView.rowHeight = UITableViewAutomaticDimension
+        tweetsView.estimatedRowHeight = 120
+        
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: "fetchHomeTimeline", forControlEvents: UIControlEvents.ValueChanged)
+        
+        let dummyTableVC = UITableViewController()
+        dummyTableVC.tableView = tweetsView
+        dummyTableVC.refreshControl = refreshControl
+        
+        fetchHomeTimeline()
+
+    }
+    
+    func fetchHomeTimeline() {
         TwitterClient.sharedInstance.homeTimelineWithParams(nil) { (tweets, error) -> () in
             self.tweets = tweets
             self.tweetsView.reloadData()
+            self.refreshControl.endRefreshing()
         }
-        tweetsView.delegate = self
-        tweetsView.dataSource = self
-        tweetsView.rowHeight = UITableViewAutomaticDimension
-        tweetsView.estimatedRowHeight = 120
     }
 
     @IBAction func onLogout(sender: AnyObject) {
