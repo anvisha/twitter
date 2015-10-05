@@ -29,4 +29,5 @@ Time spent: `11`
 ### Walkthrough
 
 ![Video Walkthrough](basic.gif)
+
 ![Persistence and Logout](persistence.gif)
