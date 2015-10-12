@@ -13,7 +13,7 @@ Required
 [x] Contains the user header view
 [x] Contains a section with the users basic stats: # tweets, # following, # followers
 [] Home Timeline - I have implemented this in the previous assignment, but have not done it for the profile page.
-[x] Tapping on a user image should bring up that user's profile page
+[x] Tapping on a user image should bring up that users profile page
 Optional
 
 [ ] Profile Page
