@@ -21,13 +21,21 @@ class User: NSObject {
     var profileImageUrl: String?
     var tagline: String?
     var dictionary: NSDictionary?
+    var backgroundImageUrl: String?
+    var followersCount: Int?
+    var friendsCount: Int?
+    var statusesCount: Int?
     
     init(dictionary: NSDictionary) {
         self.dictionary = dictionary
         name = dictionary["name"] as? String
         screenname = dictionary["screen_name"] as? String
         profileImageUrl = dictionary["profile_image_url"] as? String
+        backgroundImageUrl = dictionary["profile_background_image_url"] as? String
         tagline = dictionary["tagline"] as? String
+        followersCount = dictionary["followers_count"] as? Int
+        friendsCount = dictionary["friends_count"] as? Int
+        statusesCount = dictionary["statuses_count"] as? Int
     }
     
     func logout() {

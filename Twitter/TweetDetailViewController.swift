@@ -56,6 +56,7 @@ class TweetDetailViewController: UIViewController, UITableViewDataSource, UITabl
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print("why didn't this happen")
         let vc = segue.destinationViewController as! ComposeTweetViewController
         vc.replyTweet = replyTweetId
         vc.replyScreenName = replyScreenName

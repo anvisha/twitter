@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		37EB10D8433CCC297D78059B /* libPods-Twitter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E7908D791B2A5C9A414922 /* libPods-Twitter.a */; };
+		DE0CE22E1BCB5AE1001D7EA1 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0CE22D1BCB5AE1001D7EA1 /* MenuView.swift */; settings = {ASSET_TAGS = (); }; };
+		DE0CE2341BCB5E59001D7EA1 /* MenuHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0CE2331BCB5E59001D7EA1 /* MenuHeaderCell.swift */; settings = {ASSET_TAGS = (); }; };
+		DE0CE2381BCB60A4001D7EA1 /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0CE2371BCB60A4001D7EA1 /* MenuItemCell.swift */; settings = {ASSET_TAGS = (); }; };
+		DE0CE23A1BCB6BF3001D7EA1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0CE2391BCB6BF3001D7EA1 /* ProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		DE0CE23C1BCB7066001D7EA1 /* ProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0CE23B1BCB7066001D7EA1 /* ProfileHeaderCell.swift */; settings = {ASSET_TAGS = (); }; };
+		DE0CE23E1BCB7074001D7EA1 /* ProfileStatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0CE23D1BCB7074001D7EA1 /* ProfileStatsCell.swift */; settings = {ASSET_TAGS = (); }; };
 		DE9D63061BBD5F8C002906DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9D63051BBD5F8C002906DE /* AppDelegate.swift */; };
 		DE9D63081BBD5F8C002906DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9D63071BBD5F8C002906DE /* ViewController.swift */; };
 		DE9D630B1BBD5F8C002906DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE9D63091BBD5F8C002906DE /* Main.storyboard */; };
@@ -31,6 +37,12 @@
 		4D063DDBCFC629A81014A452 /* Pods-Twitter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twitter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Twitter/Pods-Twitter.debug.xcconfig"; sourceTree = "<group>"; };
 		A7D4E60E8BC1E7D215D04300 /* Pods-Twitter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twitter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Twitter/Pods-Twitter.release.xcconfig"; sourceTree = "<group>"; };
 		D1E7908D791B2A5C9A414922 /* libPods-Twitter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Twitter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE0CE22D1BCB5AE1001D7EA1 /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		DE0CE2331BCB5E59001D7EA1 /* MenuHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuHeaderCell.swift; sourceTree = "<group>"; };
+		DE0CE2371BCB60A4001D7EA1 /* MenuItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
+		DE0CE2391BCB6BF3001D7EA1 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		DE0CE23B1BCB7066001D7EA1 /* ProfileHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCell.swift; sourceTree = "<group>"; };
+		DE0CE23D1BCB7074001D7EA1 /* ProfileStatsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileStatsCell.swift; sourceTree = "<group>"; };
 		DE9D63021BBD5F8C002906DE /* Twitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE9D63051BBD5F8C002906DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE9D63071BBD5F8C002906DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +152,11 @@
 			isa = PBXGroup;
 			children = (
 				DE9D63251BC21214002906DE /* TweetCell.swift */,
+				DE0CE22D1BCB5AE1001D7EA1 /* MenuView.swift */,
+				DE0CE2331BCB5E59001D7EA1 /* MenuHeaderCell.swift */,
+				DE0CE2371BCB60A4001D7EA1 /* MenuItemCell.swift */,
+				DE0CE23B1BCB7066001D7EA1 /* ProfileHeaderCell.swift */,
+				DE0CE23D1BCB7074001D7EA1 /* ProfileStatsCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -150,6 +167,7 @@
 				DE9D63221BC202DB002906DE /* TweetsViewController.swift */,
 				DE9D632A1BC24455002906DE /* ComposeTweetViewController.swift */,
 				DE9D632C1BC24E81002906DE /* TweetDetailViewController.swift */,
+				DE0CE2391BCB6BF3001D7EA1 /* ProfileViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -279,11 +297,17 @@
 			files = (
 				DE9D631F1BBE8838002906DE /* User.swift in Sources */,
 				DE9D63261BC21214002906DE /* TweetCell.swift in Sources */,
+				DE0CE23C1BCB7066001D7EA1 /* ProfileHeaderCell.swift in Sources */,
 				DE9D632D1BC24E81002906DE /* TweetDetailViewController.swift in Sources */,
 				DE9D632B1BC24455002906DE /* ComposeTweetViewController.swift in Sources */,
 				DE9D63211BBE8840002906DE /* Tweet.swift in Sources */,
+				DE0CE23E1BCB7074001D7EA1 /* ProfileStatsCell.swift in Sources */,
+				DE0CE22E1BCB5AE1001D7EA1 /* MenuView.swift in Sources */,
 				DE9D63231BC202DB002906DE /* TweetsViewController.swift in Sources */,
 				DE9D63081BBD5F8C002906DE /* ViewController.swift in Sources */,
+				DE0CE2341BCB5E59001D7EA1 /* MenuHeaderCell.swift in Sources */,
+				DE0CE2381BCB60A4001D7EA1 /* MenuItemCell.swift in Sources */,
+				DE0CE23A1BCB6BF3001D7EA1 /* ProfileViewController.swift in Sources */,
 				DE9D631C1BBD6088002906DE /* TwitterClient.swift in Sources */,
 				DE9D63061BBD5F8C002906DE /* AppDelegate.swift in Sources */,
 			);

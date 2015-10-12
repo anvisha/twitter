@@ -15,13 +15,14 @@ import UIKit
 class TweetCell: UITableViewCell {
     
     @IBOutlet weak var userProfileImageView: UIImageView!
-    @IBOutlet weak var retweetLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userScreennameLabel: UILabel!
     @IBOutlet weak var timestampLabel: UILabel!
     @IBOutlet weak var bodyLabel: UILabel!
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var retweetButton: UIButton!
+    @IBOutlet weak var replyButton: UIButton!
+    @IBOutlet weak var buttonProfileImage: UIButton!
     
     weak var delegate: TweetCellDelegate?
 
@@ -30,7 +31,13 @@ class TweetCell: UITableViewCell {
             userNameLabel.text = tweet.user?.name
             userNameLabel.sizeToFit()
             userScreennameLabel.text = "@\(tweet.user?.screenname as String!)"
-            userProfileImageView.setImageWithURL(NSURL(string: (tweet.user?.profileImageUrl)!))
+            userProfileImageView!.setImageWithURL(NSURL(string: (tweet.user?.profileImageUrl)!))
+            userProfileImageView.setImageWithURLRequest(NSURLRequest(URL: NSURL(string: (tweet.user?.profileImageUrl)!)!), placeholderImage: nil, success: { (url: NSURLRequest!, response: NSHTTPURLResponse!, image: UIImage!) -> Void in
+                self.buttonProfileImage.setImage(image, forState: UIControlState.Normal)
+
+                }) { (request: NSURLRequest!, response: NSHTTPURLResponse!, error: NSError!) -> Void in
+                    print("error")
+            }
             bodyLabel.text = tweet.text
             timestampLabel.text = getTimestampLabel(tweet.createdAt!)
             if tweet.favorited == true {
@@ -39,6 +46,16 @@ class TweetCell: UITableViewCell {
             if tweet.retweeted == true {
                 retweetButton.imageView?.image = UIImage(named: "retweet_on.png")
             }
+            if tweet.retweeter != nil {
+                let retweetLabel = UILabel()
+                self.addSubview(retweetLabel)
+//                let labelConstraint = NSLayoutConstraint.constraintsWithVisualFormat("V: |-8-[retweetLabel]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["superview": self as! AnyObject, "retweetLabel": retweetLabel as! AnyObject])
+//                self.addConstraints(labelConstraint)
+//
+                
+            }
+//            buttonProfileImage.setImage(userProfileImageView!.image, forState: UIControlState.Normal)
+
         }
     }
     
