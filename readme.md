@@ -26,7 +26,7 @@ Optional
 [ ] Include a plus button to Add an Account
 [ ] Swipe to delete an account
 
-![Video Walkthrough](profile.gif)
+![Video Walkthrough](hamburger_menu.gif)
 
 ![Video Walkthrough2](other_users.gif)
 
