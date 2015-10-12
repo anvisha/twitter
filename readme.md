@@ -26,9 +26,9 @@ Optional
 [ ] Include a plus button to Add an Account
 [ ] Swipe to delete an account
 
-![Video Walkthrough](gif2.gif)
+![Video Walkthrough](profile.gif)
 
-![Video Walkthrough2](gif3.gif)
+![Video Walkthrough2](other_users.gif)
 
 This is a basic twitter app to read and compose tweets the [Twitter API](https://apps.twitter.com/).
 

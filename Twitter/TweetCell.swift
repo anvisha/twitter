@@ -33,7 +33,8 @@ class TweetCell: UITableViewCell {
             userScreennameLabel.text = "@\(tweet.user?.screenname as String!)"
             userProfileImageView!.setImageWithURL(NSURL(string: (tweet.user?.profileImageUrl)!))
             userProfileImageView.setImageWithURLRequest(NSURLRequest(URL: NSURL(string: (tweet.user?.profileImageUrl)!)!), placeholderImage: nil, success: { (url: NSURLRequest!, response: NSHTTPURLResponse!, image: UIImage!) -> Void in
-                self.buttonProfileImage.setImage(image, forState: UIControlState.Normal)
+                if self.buttonProfileImage != nil {
+                    self.buttonProfileImage.setImage(image, forState: UIControlState.Normal)}
 
                 }) { (request: NSURLRequest!, response: NSHTTPURLResponse!, error: NSError!) -> Void in
                     print("error")
