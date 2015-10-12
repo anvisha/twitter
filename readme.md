@@ -7,12 +7,12 @@ Required
 
 [x] Hamburger menu
 [x] Dragging anywhere in the view should reveal the menu.
-[x] The menu should include links to your profile, the home timeline, and the mentions view.
+[x] The menu should include links to your profile, the home timeline, and the mentions view -- I have not implemented a mentions view.
 [x] The menu can look similar to the LinkedIn menu below or feel free to take liberty with the UI.
 [x] Profile page
 [x] Contains the user header view
 [x] Contains a section with the users basic stats: # tweets, # following, # followers
-[] Home Timeline
+[] Home Timeline - I have implemented this in the previous assignment, but have not done it for the profile page.
 [x] Tapping on a user image should bring up that user's profile page
 Optional
 
@@ -26,7 +26,9 @@ Optional
 [ ] Include a plus button to Add an Account
 [ ] Swipe to delete an account
 
+![Video Walkthrough](gif2.gif)
 
+![Video Walkthrough2](gif3.gif)
 
 This is a basic twitter app to read and compose tweets the [Twitter API](https://apps.twitter.com/).
 
